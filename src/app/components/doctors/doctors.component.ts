@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MedicalAppService } from 'src/app/services/medical-app.service';
 
 @Component({
   selector: 'app-doctors',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctors.component.css']
 })
 export class DoctorsComponent implements OnInit {
+  isUpdated = false
+  doctor: any = {};  
+  doctors: any[] = []
 
-  constructor() { }
+  constructor(private medicalAppService:MedicalAppService) { }
 
-  ngOnInit(): void {
+  
+  submit(doctor:any): void{  
+    if(this.isUpdated){
+      this.medicalAppService.updateDoctor(doctor).subscribe()
+    } else{
+      this.medicalAppService.createDoctor(doctor).subscribe()
+    }    
+  }
+
+  updateDoctor(doctor: any): void{
+    this.doctor = doctor
+    this.isUpdated = true
+  }
+
+  ngOnInit(): void {    
+    this.medicalAppService.getDoctors().subscribe((m:any) => this.doctors=m);
   }
 
 }

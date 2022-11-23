@@ -11,6 +11,9 @@ import { ROUTES } from './app.routes';
 import { PatientsComponent } from './components/patients/patients.component';
 import { RecordsComponent } from './components/records/records.component';
 import { MedicinesComponent } from './components/medicines/medicines.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DoctorUpdateFormComponent } from './components/doctors/doctor-update-form/doctor-update-form.component';
+import { DoctorCreateFormComponent } from './components/doctors/doctor-create-form/doctor-create-form.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { MedicinesComponent } from './components/medicines/medicines.component';
     DoctorsComponent,
     PatientsComponent,
     RecordsComponent,
-    MedicinesComponent
+    MedicinesComponent,
+    DoctorUpdateFormComponent,
+    DoctorCreateFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(ROUTES, {useHash: true})
+    RouterModule.forRoot(ROUTES, {useHash: true}),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

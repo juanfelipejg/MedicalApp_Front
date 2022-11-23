@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+    <label for="identification">Cedula: </label>
+    <input id="identification" type="text"  formControlName="identification" >
+    <label for="name">Nombre: </label>
+    <input id="name" type="text" formControlName="name" >
+    <label for="lastName">Apellidos: </label>
+    <input id="lastName" type="text" formControlName="lastName" >
+    <label for="phoneNumber">Telefono: </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber" >
+    <label for="office">Oficina: </label>
+    <input id="office" type="text" formControlName="office" >
+    <label for="schedule">Horario: </label>
+    <input id="schedule" type="text" formControlName="schedule" >
+    <label for="specialty">Especialidad: </label>
+    <input id="specialty" type="text" formControlName="specialty" >
+    <button (click)="submit()">Enviar</button>
+</form>

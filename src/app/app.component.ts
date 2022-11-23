@@ -14,6 +14,5 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    this.medicalAppService.getDoctors().subscribe();
   }
 }

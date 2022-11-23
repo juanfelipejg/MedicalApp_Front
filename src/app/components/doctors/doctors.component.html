@@ -1,1 +1,6 @@
-<p>doctors works!</p>
+<app-doctor-update-form *ngIf="isUpdated" [doctor]="doctor" (sendForm)="submit($event)"></app-doctor-update-form>
+<app-doctor-create-form *ngIf="!isUpdated" (sendForm)="submit($event)"></app-doctor-create-form>
+<div *ngFor="let p of doctors">
+    <p>{{p?.name}}</p>
+    <button (click)="updateDoctor(p)">Actualizar</button>
+</div>
