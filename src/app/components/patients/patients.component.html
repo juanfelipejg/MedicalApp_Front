@@ -1,1 +1,24 @@
-<p>patients works!</p>
+<div class="table_container">
+<app-patient-update-form *ngIf="isUpdated" [patient]="patient" (sendForm)="submit($event)"></app-patient-update-form>
+<app-patient-create-form *ngIf="!isUpdated" (sendForm)="submit($event)"></app-patient-create-form>
+<div class="separator">
+
+</div>
+<table class="table">
+    <thead class="thead-dark">
+        <th scope="col">Identificación</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Acciones</th>
+    </thead>
+    <tbody>       
+            <tr  *ngFor="let p of patients">  
+                <td>{{p?.identification}}</td>
+                <td>{{p?.name}} {{p?.lastName}}</td>
+                <td>{{p?.age}}</td>
+                <td class="buton_container"><button (click)="updatePatient(p)" class="btn btn-secondary">Actualizar</button>
+                <button (click)="deletePatient(p.identification)" class="btn btn-danger">Eliminar</button></td>                 
+             </tr>     
+    </tbody>
+  </table>
+</div>

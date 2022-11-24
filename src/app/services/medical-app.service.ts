@@ -44,10 +44,56 @@ export class MedicalAppService {
     return this.http.post(url, body, this.httpOptions)   
   }
 
+  createPatient(patient: any): any{
+    var url = 'https://localhost:7132/api/Patients';
+
+    const body = JSON.stringify(patient);
+    return this.http.post(url, body, this.httpOptions)  
+  }
+
+  createRecord(record: any): any{
+    var url = 'https://localhost:7132/api/Record';
+
+    const body = JSON.stringify(record);
+    return this.http.post(url, body, this.httpOptions)  
+  }
+
   updateDoctor(doctor: any): any{
     var url = 'https://localhost:7132/api/Doctors';
 
     const body = JSON.stringify(doctor);
     return this.http.put(url, body, this.httpOptions)
+  }
+
+  updatePatient(patient:any): any{
+    var url = 'https://localhost:7132/api/Patients';
+
+    const body = JSON.stringify(patient);
+    return this.http.put(url, body, this.httpOptions)
+  }
+
+  updateRecord(record:any):any{
+    var url = 'https://localhost:7132/api/Record';
+
+    const body = JSON.stringify(record);
+    return this.http.put(url, body, this.httpOptions)
+  }
+
+  deleteDoctor(id: any):any{
+    var url = `https://localhost:7132/api/Doctors/${id}`;
+
+    return this.http.delete(url, this.httpOptions)
+  }
+
+  deletePatient(id: any):any{
+    var url = `https://localhost:7132/api/Doctors/${id}`;
+
+    return this.http.delete(url, this.httpOptions)
+  }
+
+  deleteRecord(id:any): any{
+    var url = `https://localhost:7132/api/Record/${id}`;
+
+    return this.http.delete(url, this.httpOptions)
   }
 }

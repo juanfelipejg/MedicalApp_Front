@@ -1,1 +1,28 @@
-<p>records works!</p>
+<div class="table_container">
+    <app-record-update-form *ngIf="isUpdated" [record]="record" (sendForm)="submit($event)"></app-record-update-form>
+    <app-record-create-form *ngIf="!isUpdated" (sendForm)="submit($event)"></app-record-create-form>
+    <div class="separator">
+
+    </div>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <th scope="col">Identificación</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Examenes médicos</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Acciones</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of records">
+                <td>{{p?.id}}</td>
+                <td>{{p?.specialty_Referred_To}} </td>
+                <td>{{p?.medicalExams}} </td>
+                <td>{{p?.creationDate}} </td>
+                <td class="buton_container"><button (click)="updateRecord(p)" class="btn btn-secondary">Actualizar</button>
+                    <button (click)="deleteRecord(p.id)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

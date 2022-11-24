@@ -14,6 +14,10 @@ import { MedicinesComponent } from './components/medicines/medicines.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorUpdateFormComponent } from './components/doctors/doctor-update-form/doctor-update-form.component';
 import { DoctorCreateFormComponent } from './components/doctors/doctor-create-form/doctor-create-form.component';
+import { PatientCreateFormComponent } from './components/patients/patient-create-form/patient-create-form.component';
+import { PatientUpdateFormComponent } from './components/patients/patient-update-form/patient-update-form.component';
+import { RecordCreateFormComponent } from './components/records/record-create-form/record-create-form.component';
+import { RecordUpdateFormComponent } from './components/records/record-update-form/record-update-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { DoctorCreateFormComponent } from './components/doctors/doctor-create-fo
     RecordsComponent,
     MedicinesComponent,
     DoctorUpdateFormComponent,
-    DoctorCreateFormComponent
+    DoctorCreateFormComponent,
+    PatientCreateFormComponent,
+    PatientUpdateFormComponent,
+    RecordCreateFormComponent,
+    RecordUpdateFormComponent
   ],
   imports: [
     BrowserModule,

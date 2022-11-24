@@ -1,6 +1,27 @@
+<div class="table_container">
 <app-doctor-update-form *ngIf="isUpdated" [doctor]="doctor" (sendForm)="submit($event)"></app-doctor-update-form>
 <app-doctor-create-form *ngIf="!isUpdated" (sendForm)="submit($event)"></app-doctor-create-form>
-<div *ngFor="let p of doctors">
-    <p>{{p?.name}}</p>
-    <button (click)="updateDoctor(p)">Actualizar</button>
+<div class="separator">
+
+</div>
+
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Identificación</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of doctors">
+        <td>{{p?.identification}}</td>
+        <td>{{p?.name}} {{p?.lastName}}</td>
+        <td class="buton_container"><button (click)="updateDoctor(p)" class="btn btn-secondary">Actualizar</button>
+          <button (click)="deleteDoctor(p.identification)" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

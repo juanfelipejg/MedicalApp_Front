@@ -1,12 +1,14 @@
 <form [formGroup]="form">
     <div class="row">
         <div class="col">
+            <!--<label for="identification">Cedula: </label>-->
             <input id="identification" type="text"  formControlName="identification" placeholder="Cedula" >
         </div>
         <div class="col">
             <input id="name" type="text" formControlName="name" placeholder="Nombre">
         </div>
         <div class="col">
+            <!--<label for="lastName">Apellidos: </label>-->
             <input id="lastName" type="text" formControlName="lastName" placeholder="Apellidos">
         </div>
         <div class="col">
@@ -15,13 +17,13 @@
     </div>
     <div class="row">
         <div class="col">           
-            <input id="office" type="text" formControlName="office" placeholder="Oficina">
+            <input id="birthDate" type="text" formControlName="birthDate" placeholder="Fecha de nacimiento">
         </div>
         <div class="col">
-            <input id="schedule" type="text" formControlName="schedule" placeholder="Horario">
+            <input id="rh" type="text" formControlName="rh" placeholder="Tipo de sangre">
         </div>
         <div class="col">
-            <input id="specialty" type="text" formControlName="specialty" placeholder="Especialidad">
+            <input id="city" type="text" formControlName="city" placeholder="Ciudad de residencia">
         </div>
         <div class="col">
             <button (click)="submit()" type="button" class="btn btn-primary">Enviar</button>

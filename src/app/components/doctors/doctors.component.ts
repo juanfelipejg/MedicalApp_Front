@@ -21,12 +21,18 @@ export class DoctorsComponent implements OnInit {
     } else{
       this.medicalAppService.createDoctor(doctor).subscribe()
     }    
+    this.medicalAppService.getDoctors().subscribe((m:any) => this.doctors=m);
   }
 
   updateDoctor(doctor: any): void{
     this.doctor = doctor
     this.isUpdated = true
   }
+
+  deleteDoctor(id: any):void{
+    this.medicalAppService.deleteDoctor(id).subscribe()
+  }
+
 
   ngOnInit(): void {    
     this.medicalAppService.getDoctors().subscribe((m:any) => this.doctors=m);

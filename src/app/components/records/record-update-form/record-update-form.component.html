@@ -1,0 +1,27 @@
+<form [formGroup]="form">
+    <div class="row">
+        <div class="col">
+            <input id="doctor" type="text"  formControlName="doctor" placeholder="Cedula Medico" >
+        </div>
+        <div class="col">
+            <input id="patient" type="text" formControlName="patient" placeholder="Cedula Paciente">
+        </div>
+        <div class="col">
+            <input id="creationDate" type="text" formControlName="creationDate" placeholder="Fecha">
+        </div>
+        <div class="col">
+            <input id="description" type="text" formControlName="description" placeholder="Descripcion">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">           
+            <input id="medicalExams" type="text" formControlName="medicalExams" placeholder="Examenes">
+        </div>
+        <div class="col">
+            <input id="specialty_Referred_To" type="text" formControlName="specialty_Referred_To" placeholder="Especialidad a reemitir">
+        </div>
+        <div class="col">
+            <button (click)="submit()" type="button" class="btn btn-primary">Enviar</button>
+        </div>        
+    </div>
+</form>
